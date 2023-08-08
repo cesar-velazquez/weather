@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import './App.css'
 import { Wheater } from './components/Wheater'
 import axios from 'axios';
+import "/src/components/tools.js"
+import "/src/components/tools.css"
 
 
 
