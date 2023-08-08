@@ -81,7 +81,7 @@ export const Wheater = ({ weather }) => {
     //
 
     return (
-        <div className={`dark:bg-orange-500/25  bg-black/90 z-10 brightness-60 text-white min-h-screen flex justify-center items-center px-2 bg-no-repeat bg-cover bg-center ${weather? resultbg : resultbgs}`}>
+        <div className={`dark:bg-orange-500/25  bg-black/90 z-10 brightness-60 text-white min-h-screen flex justify-center items-center px-2 bg-no-repeat bg-cover bg-center ${resultbgs}`}>
             <h1 className='dark:text-black text-center absolute top-0 text-white font-lato text-3xl p-5 m-1 font-bold'>Weather</h1>
             <div>
                 <form className='dark:bg-white/25 dark:text-black m-3 bg-black form flex justify-center mb-20  gap-2 h-10 p-2  rounded-2xl ' onSubmit={handlesubmit}>
