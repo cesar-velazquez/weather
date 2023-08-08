@@ -1,12 +1,12 @@
-function loader() {
-    setTimeout(function () {
-        document
-            .querySelector(".content__loader")
-            .classList.add("content__loader__hidden");    
-            console.log("se quita")    
-    }, 1000);
-}
+// function loader() {
+//     setTimeout(function () {
+//         document
+//             .querySelector(".content__loader")
+//             .classList.add("content__loader__hidden");    
+//             console.log("se quita")    
+//     }, 1000);
+// }
 
-window.addEventListener("load", function () {
-    loader();
-});
+// window.addEventListener("load", function () {
+//     loader();
+// });
