@@ -76,7 +76,7 @@ export const Wheater = ({ weather }) => {
     }
 
     //
- 
+
     //
 
     return (
@@ -174,7 +174,15 @@ export const Wheater = ({ weather }) => {
                             <button className='dark:bg-blue-500 bg-black rounded-2xl w-40 m-auto sm:h-9 text-white' onClick={handleChangeUtemp} > Cambiar a {iscelsius ? "F" : "C"} °</button>
                         </section>
                     )
-                }</div>          
+                }</div>
+
+
+            {/* <div class="content__loader">
+                <div class="loader">
+                </div>
+            </div> */}
+
+
         </div>
     )
 }
