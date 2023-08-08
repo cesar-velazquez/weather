@@ -3,8 +3,12 @@ import './App.css'
 import { Wheater } from './components/Wheater'
 import axios from 'axios';
 
+
+
 function App() {
   const [weather, setWeather] = useState(null)
+
+
 
 
   const success = (pos) => {
@@ -23,7 +27,9 @@ function App() {
 
   return (
     <div>
-      <Wheater weather={weather} />
+      { weather && <Wheater  weather={weather} />  }
+      
+
     </div>
   )
 }
