@@ -3,7 +3,7 @@ function loader() {
         document
             .querySelector(".content__loader")
             .classList.add("content__loader__hidden");        
-    }, 500);
+    }, 1000);
 }
 
 window.addEventListener("load", function () {

@@ -20,7 +20,7 @@
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    border: 35px solid orange;
+    border: 35px solid rgb(21, 0, 255);
     border-top: none;
     border-left: none;
     animation: animation__loader 1s infinite;
