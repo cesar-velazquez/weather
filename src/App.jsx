@@ -1,16 +1,9 @@
 import { useEffect, useState } from 'react';
-import './App.css'
 import { Wheater } from './components/Wheater'
 import axios from 'axios';
 
-
-
-
 function App() {
   const [weather, setWeather] = useState(null)
-
-
-
 
   const success = (pos) => {
     const lat = pos.coords.latitude;
