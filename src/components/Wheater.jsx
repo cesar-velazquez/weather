@@ -1,7 +1,5 @@
 import axios from 'axios';
 import React, { useState } from 'react'
-import "/src/components/tools.js"
-import "/src/components/tools.css"
 
 export const Wheater = ({ weather }) => {
 
