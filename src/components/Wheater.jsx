@@ -76,13 +76,23 @@ export const Wheater = ({ weather }) => {
         }      
     }
 
+    const validate = (e) =>{
+                const valor = document.getElementById('countryName');                
+                if (valor.value === "") {
+                    alert("ingresa el lugar");
+                }
+    }
+
     return (
         <div className={`bg-orange-500/25  dark:bg-black/90 z-10 brightness-60 text-white min-h-screen flex justify-center items-center px-2 bg-no-repeat bg-cover bg-center ${resultbgs}`}>
             <h1 className='text-black text-center absolute top-0 dark:text-white font-lato text-3xl p-5 m-1 font-bold'>Weather</h1>
             <div>
                 <form className='bg-white/25 text-black m-5  dark:bg-black form flex justify-center mb-20  gap-2 h-15 p-5  rounded-2xl ' onSubmit={handlesubmit}>
                     <input className='p-1 h-6 border-black text-black rounded-2xl text-center ' id="countryName" placeholder='escribe un lugar...' type="text" />
-                    <button className='hover:bg-red-500 bg-white hover:rounded-3xl hover:text-black font-lato text-[18px] w-20 font-bold dark:bg-red-600 dark:text-white dark:hover:bg-blue-500 rounded-2xl text-black dark:rounded-3xl'>Buscar</button>
+                    
+                     <button onClick={validate} id='search'  className='hover:bg-red-500 bg-white hover:rounded-3xl hover:text-black font-lato text-[18px] w-20 font-bold dark:bg-red-600 dark:text-white dark:hover:bg-blue-500 rounded-2xl text-black dark:rounded-3xl'>Buscar</button>
+                     
+                    
                 </form>
                 <div className="bg-white/25 text-black m-3 dark:bg-black dark:text-white rounded-3xl font-lato font-semibold grid justify-center p-1 ">
 
