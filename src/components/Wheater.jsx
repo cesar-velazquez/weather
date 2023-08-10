@@ -83,12 +83,12 @@ export const Wheater = ({ weather }) => {
     }
     return (
         <div className={` bg-orange-500/25  dark:bg-black/90 brightness-60  text-white min-h-screen flex justify-center items-center px-2 bg-no-repeat bg-cover bg-center ${resultbgs}`}>
-    d
+    
                 {
                     searchweather ? (
                         
                         <section className='text-center grid gap-5 '>
-                            {/* text-black text-center absolute top-0 dark:text-white font-lato text-3xl p-5 m-1 font-bold */}
+                            
                             <h1 className='text-black text-center absolute top-0 left-0 right-0  dark:text-white font-lato text-3xl p-5 m-1 font-bold'>Weather</h1>
                             <form className='bg-white/25 text-black m-5 mt-[5rem]  dark:bg-black form flex justify-center  mb-2  gap-2 h-15 p-5  rounded-2xl  ' onSubmit={handlesubmit}>
                                 <input className='p-1 h-6 border-black text-black rounded-2xl text-center ' id="countryName" placeholder='escribe un lugar...' type="text" />
