@@ -43,8 +43,7 @@ export const Wheater = ({ weather }) => {
     const [searchweather, setSearchweather] = useState(null)
     const TempSearch = iscelsius ? KelvintoCelsius(searchweather?.main.temp) : KelvintoFar(searchweather?.main.temp);
 
-    const resultbgs = bgrandom[searchweather?.weather[0].icon];
-    console.log(resultbgs)
+    const resultbgs = bgrandom[searchweather?.weather[0].icon];    
     const resultbg = bgrandom[weather?.weather[0].icon];
 
     const handlesubmit = (event) => {
@@ -89,8 +88,9 @@ export const Wheater = ({ weather }) => {
                     searchweather ? (
                         
                         <section className='text-center grid gap-5 '>
-                            <h1 className='text-black text-center  dark:text-white font-lato text-3xl p-5 m-1 font-bold'>Weather</h1>
-                            <form className='bg-white/25 text-black m-5  dark:bg-black form flex justify-center  mb-2  gap-2 h-15 p-5  rounded-2xl  ' onSubmit={handlesubmit}>
+                            {/* text-black text-center absolute top-0 dark:text-white font-lato text-3xl p-5 m-1 font-bold */}
+                            <h1 className='text-black text-center absolute top-0 left-0 right-0  dark:text-white font-lato text-3xl p-5 m-1 font-bold'>Weather</h1>
+                            <form className='bg-white/25 text-black m-5 mt-[5rem]  dark:bg-black form flex justify-center  mb-2  gap-2 h-15 p-5  rounded-2xl  ' onSubmit={handlesubmit}>
                                 <input className='p-1 h-6 border-black text-black rounded-2xl text-center ' id="countryName" placeholder='escribe un lugar...' type="text" />
                                 <button onClick={validate} id='search' className='hover:bg-red-500 bg-white hover:rounded-3xl hover:text-black font-lato text-[18px] w-20 font-bold dark:bg-red-600 dark:text-white dark:hover:bg-blue-500 
                     rounded-2xl text-black dark:rounded-3xl'>Buscar</button>
