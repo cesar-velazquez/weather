@@ -84,9 +84,9 @@ export const Wheater = ({ weather }) => {
     }
 
     return (
-        <div className={`bg-orange-500/25  dark:bg-black/90 z-10 brightness-60 text-white min-h-screen flex justify-center items-center px-2 bg-no-repeat bg-cover bg-center ${resultbgs}`}>
+        <div className={`bg-orange-500/25  dark:bg-black/90  brightness-60 text-white min-h-screen flex justify-center items-center px-2 bg-no-repeat bg-cover bg-center ${resultbgs}`}>
             <h1 className='text-black text-center absolute top-0 dark:text-white font-lato text-3xl p-5 m-1 font-bold'>Weather</h1>
-            <div>
+            <div className='m-5 p-10'>
                 <form className='bg-white/25 text-black m-5  dark:bg-black form flex justify-center mb-20  gap-2 h-15 p-5  rounded-2xl ' onSubmit={handlesubmit}>
                     <input className='p-1 h-6 border-black text-black rounded-2xl text-center ' id="countryName" placeholder='escribe un lugar...' type="text" />
                     
@@ -94,21 +94,21 @@ export const Wheater = ({ weather }) => {
                      
                     
                 </form>
-                <div className="bg-white/25 text-black m-3 dark:bg-black dark:text-white rounded-3xl font-lato font-semibold grid justify-center p-1 ">
+                <div className="w-64 m-auto my-4 bg-white/25 text-black dark:bg-black dark:text-white rounded-3xl font-lato font-semibold grid justify-center p-1 ">
 
                     <a className=' flex gap-5 text-2xl p-3 btn__Mode' id='changeTheme'>
-                        <h6 className="text-2xl">Change Theme</h6>
+                        <h6 className="text-xl ">Change Theme</h6>
                         <i onClick={handleChangeTheme} className=' text-3xl cursor-pointer bx bx-toggle-left'></i>
                     </a>
                 </div>
                 {
                     searchweather ? (
-                        <section className='text-center grid gap-5'>
-                            <h2 className=' bg-white/25 text-black font-lato text-3xl font-bold dark:bg-black dark:text-white rounded-xl p-2'>{searchweather?.name}, {searchweather?.sys.country}</h2>
+                        <section className='text-center grid gap-5 '>
+                            <h2 className=' bg-white/25 text-black font-lato text-xl font-bold dark:bg-black dark:text-white rounded-xl p-2 w-72 m-auto '>{searchweather?.name}, {searchweather?.sys.country}</h2>
 
                             <section className={`grid gap-4 sm:grid-cols-[auto_auto]`}>
 
-                                <section className='bg-white/25 text-black  items-center dark:bg-black dark:text-white p-2 rounded-2xl grid grid-cols-2 text-2xl font-bold'>
+                                <section className='bg-white/25 text-black  items-center dark:bg-black  dark:text-white p-2 rounded-2xl grid grid-cols-2 text-xl font-bold mx-8 sm:mx-0'>
                                     <h4 className='text-2xl font-bold font-lato col-span-2'>{searchweather?.weather[0].description}</h4>
                                     <span className='text-4xl font-lato font-bold'>{TempSearch}° {iscelsius ? "C" : "F"}</span>
                                     <div>
@@ -116,7 +116,7 @@ export const Wheater = ({ weather }) => {
                                     </div>
                                 </section>
 
-                                <section className='bg-white/25 text-black  p-2 py-4 dark:bg-black dark:text-white rounded-2xl grid grid-cols-3 items-center sm:grid-cols-1 text-2xl font-bold font-lato'>
+                                <section className='bg-white/25 text-black  p-2 py-4 dark:bg-black dark:text-white rounded-2xl grid grid-cols-3 items-center sm:grid-cols-1 text-sm font-bold font-lato mx-8 sm:mx-0'>
                                     <article className='flex gap-1 items-center'>
                                         <div className='w-[19px]'>
                                             <img className='bg-white rounded-md ' src="/imgs/wind.png" alt="Viento" />
@@ -143,11 +143,11 @@ export const Wheater = ({ weather }) => {
                         </section>
                     ) : (
                         <section className='text-center grid gap-5'>
-                            <h2 className='bg-white/25 text-black font-lato text-3xl font-bold dark:bg-black dark:text-white rounded-xl p-2'>{weather?.name}, {weather?.sys.country}</h2>
+                            <h2 className='bg-white/25 text-black font-lato text-xl font-bold dark:bg-black dark:text-white rounded-xl p-2 m-auto'>{weather?.name}, {weather?.sys.country}</h2>
 
-                            <section className={`grid gap-4 sm:grid-cols-[auto_auto]`}>
+                            <section className={`grid gap-4 sm:grid-cols-[auto_auto] `}>
 
-                                <section className='bg-white/25 text-black items-center dark:bg-black dark:text-white p-2 rounded-2xl grid grid-cols-2'>
+                                <section className=' bg-white/25 text-black items-center dark:bg-black dark:text-white p-2 mx-8 rounded-2xl grid grid-cols-2 sm:m-0'>
                                     <h4 className='text-2xl font-bold font-lato col-span-2'>{weather?.weather[0].description}</h4>
                                     <span className='text-4xl font-lato font-bold'>{resultTemp}° {iscelsius ? "C" : "F"}</span>
                                     <div>
@@ -155,7 +155,7 @@ export const Wheater = ({ weather }) => {
                                     </div>
                                 </section>
 
-                                <section className='bg-white/25 text-black p-2 py-4 dark:bg-black dark:text-white rounded-2xl grid grid-cols-3 items-center sm:grid-cols-1'>
+                                <section className='bg-white/25 text-black p-2 py-4 dark:bg-black dark:text-white rounded-2xl grid grid-cols-3 items-center sm:grid-cols-1 mx-8 sm:m-0'>
                                     <article className='flex gap-1 items-center'>
                                         <div className='w-[19px]'>
                                             <img className='bg-white rounded-md ' src="/imgs/wind.png" alt="Viento" />
