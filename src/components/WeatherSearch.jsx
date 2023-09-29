@@ -12,7 +12,7 @@ const WeatherSearch = ({ resultbg, handlesubmit, validate, handleChangeTheme, is
             </section>
 
             <section className='absolute 
-            px-4 pb-4 grid gap-1 
+            grid gap-1 
             sm:gap-5 
             '>
                 <h1
@@ -21,7 +21,9 @@ const WeatherSearch = ({ resultbg, handlesubmit, validate, handleChangeTheme, is
                     dark:text-white '>Weather</h1>
 
                 <form className='
-                bg-white/70 text-black m-5  dark:bg-black form flex justify-center mt-[2rem] mb-2  gap-2 h-15 p-5  rounded-2xl 
+                bg-white/70 text-black m-5  transition-colors duration-1000 
+                dark:bg-black form flex flex-wrap justify-center mt-[2rem] mb-2  gap-2 
+                h-15 p-5  rounded-2xl 
                 ' onSubmit={handlesubmit}>
                     <input className='p-1 h-6 border-black text-black rounded-2xl text-center ' id="countryName" placeholder='escribe un lugar...' type="text" />
 
@@ -30,18 +32,18 @@ const WeatherSearch = ({ resultbg, handlesubmit, validate, handleChangeTheme, is
         transition-colors duration-500'>Buscar</button>
                 </form>
 
-                <div className="z-0 w-64 m-auto my-4 bg-white/70 text-black dark:bg-black dark:text-white rounded-3xl font-lato font-semibold grid justify-center p-1 ">
+                <div className="z-0 w-64 m-auto my-4 bg-white/70 text-black transition-colors duration-1000 dark:bg-black dark:text-white rounded-3xl font-lato font-semibold grid justify-center p-1 ">
                     <a className=' flex gap-5 text-2xl p-3 btn__Mode' id='changeTheme'>
                         <h6 className="text-xl ">Change Theme</h6>
                         <i onClick={handleChangeTheme} className={` text-3xl cursor-pointer bx ${isDarkMode ? 'bx-toggle-right' : 'bx-toggle-left'} `}></i>
                     </a>
                 </div>
 
-                <h2 className='bg-white/70 text-black font-lato text-xl font-bold dark:bg-black dark:text-white rounded-xl p-2 m-auto'>{weather?.name}, {weather?.sys.country}</h2>
+                <h2 className='bg-white/70 text-black font-lato text-xl font-bold transition-colors duration-1000 dark:bg-black dark:text-white rounded-xl p-2 m-auto'>{weather?.name}, {weather?.sys.country}</h2>
 
                 <section className={`grid gap-4 sm:grid-cols-[auto_auto] `}>
 
-                    <section className=' bg-white/70 text-black items-center dark:bg-black dark:text-white p-2 mx-8 rounded-2xl grid grid-cols-2 sm:m-0'>
+                    <section className=' bg-white/70 text-black items-center transition-colors duration-1000 dark:bg-black dark:text-white p-2 mx-8 rounded-2xl grid grid-cols-2 sm:m-0'>
                         <h4 className='text-2xl font-bold font-lato col-span-2'>{weather?.weather[0].description}</h4>
                         <span className='text-4xl font-lato font-bold'>{resultTemp}° {iscelsius ? "C" : "F"}</span>
                         <div>
@@ -49,7 +51,7 @@ const WeatherSearch = ({ resultbg, handlesubmit, validate, handleChangeTheme, is
                         </div>
                     </section>
 
-                    <section className='bg-white/70 text-black p-2 py-4 dark:bg-black dark:text-white rounded-2xl grid grid-cols-3 items-center sm:grid-cols-1 mx-8 sm:m-0'>
+                    <section className='bg-white/70 text-black p-2 py-4 transition-colors duration-1000 dark:bg-black dark:text-white rounded-2xl grid grid-cols-3 items-center sm:grid-cols-1 mx-8 sm:m-0'>
                         <article className='flex gap-1 items-center'>
                             <div className='w-[19px]'>
                                 <img className='bg-white rounded-md ' src="/imgs/wind.png" alt="Viento" />

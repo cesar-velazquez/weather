@@ -13,7 +13,7 @@ const WeatherCurrent = ({ handlesubmit, validate, handleChangeTheme, isDarkMode,
 
 
             <section className='absolute 
-            px-4 pb-4 grid gap-1 
+            px-4 pb-1 grid gap-1
             sm:gap-5 
             '>
 
@@ -22,7 +22,9 @@ const WeatherCurrent = ({ handlesubmit, validate, handleChangeTheme, isDarkMode,
                 sm:text-3xl sm:p-5 p-1 font-bold 
                 dark:text-white '>Weather</h1>
 
-                <form className='bg-white/70 text-black m-5 mt-[5rem]  dark:bg-black form flex justify-center  mb-2  gap-2 h-15 p-5  rounded-2xl  
+                <form className='bg-white/70 text-black m-5 sm:mt-[5rem]  
+                transition-colors duration-700 dark:bg-black flex 
+                flex-wrap justify-center  mb-2  gap-2 h-15 p-5  rounded-2xl  
                 ' onSubmit={handlesubmit}>
                     <input className='p-1 h-6 border-black text-black rounded-2xl text-center ' id="countryName" placeholder='escribe un lugar...' type="text" />
                     <button onClick={validate} id='search' className='hover:bg-red-500 bg-white hover:rounded-3xl hover:text-black font-lato text-[18px] w-20 font-bold dark:bg-red-600 dark:text-white dark:hover:bg-blue-500 
@@ -30,7 +32,7 @@ rounded-2xl text-black dark:rounded-3xl transition-colors duration-500'>Buscar</
                 </form>
 
 
-                <div className="z-0 w-64 m-auto my-4 bg-white/70 text-black dark:bg-black dark:text-white rounded-3xl font-lato font-semibold grid justify-center p-1 ">
+                <div className="z-0 w-64 m-auto my-4 bg-white/70 text-black transition-colors duration-700 dark:bg-black dark:text-white rounded-3xl font-lato font-semibold grid justify-center p-1 ">
                     <a className=' flex gap-5 text-2xl p-3 btn__Mode' id='changeTheme'>
                         <h6 className="text-xl ">Change Theme</h6>
 
@@ -39,11 +41,15 @@ rounded-2xl text-black dark:rounded-3xl transition-colors duration-500'>Buscar</
                     </a>
                 </div>
 
-                <h2 className=' bg-white/70 text-black font-lato text-xl font-bold dark:bg-black dark:text-white rounded-xl p-2 w-72 m-auto '>{searchweather?.name}, {searchweather?.sys.country}</h2>
+                <h2 className=' bg-white/70 text-black font-lato 
+                text-xl font-bold transition-colors duration-700 
+                dark:bg-black dark:text-white rounded-xl 
+                p-2 w-72 m-auto text-center
+                '>{searchweather?.name}, {searchweather?.sys.country}</h2>
 
                 <section className={`grid gap-4 sm:grid-cols-[auto_auto]`}>
 
-                    <section className='bg-white/70 text-black  items-center dark:bg-black  dark:text-white p-2 rounded-2xl grid grid-cols-2 text-xl font-bold mx-8 sm:mx-0'>
+                    <section className='bg-white/70 text-black  items-center transition-colors duration-700 dark:bg-black  dark:text-white p-2 rounded-2xl grid grid-cols-2 text-xl font-bold mx-8 sm:mx-0'>
                         <h4 className='text-2xl font-bold font-lato col-span-2'>{searchweather?.weather[0].description}</h4>
                         <span className='text-4xl font-lato font-bold'>{TempSearch}° {iscelsius ? "C" : "F"}</span>
                         <div>
@@ -51,7 +57,7 @@ rounded-2xl text-black dark:rounded-3xl transition-colors duration-500'>Buscar</
                         </div>
                     </section>
 
-                    <section className='bg-white/70 text-black  p-2 py-4 dark:bg-black dark:text-white rounded-2xl grid grid-cols-3 items-center sm:grid-cols-1 text-sm font-bold font-lato mx-8 sm:mx-0'>
+                    <section className='bg-white/70 text-black  p-2 py-4 transition-colors duration-700 dark:bg-black dark:text-white rounded-2xl grid grid-cols-3 items-center sm:grid-cols-1 text-sm font-bold font-lato mx-8 sm:mx-0'>
                         <article className='flex gap-1 items-center'>
                             <div className='w-[19px]'>
                                 <img className='bg-white rounded-md ' src="/imgs/wind.png" alt="Viento" />
