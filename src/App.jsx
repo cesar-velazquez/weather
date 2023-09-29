@@ -20,10 +20,10 @@ function App() {
   }, [])
 
   return (
-    <div>
-      { weather && <Wheater  weather={weather} />  }
-      
-
+    <div className=''>
+      { 
+      weather && <Wheater  weather={weather} />  
+      }
     </div>
   )
 }
