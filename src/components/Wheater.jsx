@@ -67,7 +67,7 @@ export const Wheater = ({ weather }) => {
     const validate = (e) => {
         const valor = document.getElementById('countryName');
         if (valor.value === "") {
-            alert("ingresa el lugar");
+            alert("ingresa el lugar que deseas buscar");
         }
     }
 
