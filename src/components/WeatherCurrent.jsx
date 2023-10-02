@@ -1,9 +1,12 @@
 import React from 'react'
 
-const WeatherCurrent = ({ handlesubmit, validate, handleChangeTheme, isDarkMode, searchweather, TempSearch, iscelsius, handleChangeUtemp, resultbgs }) => {
+const WeatherCurrent = ({ handlesubmit, validate, 
+    handleChangeTheme, isDarkMode, searchweather, 
+    TempSearch, iscelsius, handleChangeUtemp, resultbgDarks, 
+    resultbgs }) => {
     return (
         <div className={`text-white min-h-screen h-[117vh]  flex justify-center 
-        items-start  bg-no-repeat bg-cover bg-center ${isDarkMode ? `${resultbgs} ` : ` ${resultbgs}`}`} alt="">
+        items-start  bg-no-repeat bg-cover bg-center ${isDarkMode== true ? `${resultbgDarks} ` : ` ${resultbgs}`}`} >
 
             <section className='m-auto text-center grid gap-5             
             w-[min(100%,_510px)] dark:w-full 
@@ -17,10 +20,10 @@ const WeatherCurrent = ({ handlesubmit, validate, handleChangeTheme, isDarkMode,
             sm:gap-5 
             '>
 
-                <h1
+                <a href='/'
                     className='text-black text-center font-lato text-[1.3rem]
                 sm:text-3xl sm:p-5 p-1 font-bold 
-                dark:text-white '>Weather</h1>
+                dark:text-white '>Weather</a>
 
                 <form className='bg-white/70 text-black m-5 sm:mt-[5rem]  
                 transition-colors duration-700 dark:bg-black flex 

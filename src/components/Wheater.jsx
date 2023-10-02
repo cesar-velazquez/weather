@@ -2,30 +2,32 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import WeatherSearch from './WeatherSearch';
 import WeatherCurrent from './WeatherCurrent';
+import bgrandom from './Data/bgrandom.json'
+import bgdarkmode from './Data/bgdarkmode.json'
 
 export const Wheater = ({ weather }) => {
     const [isDarkMode, setIsDarkMode] = useState(localStorage.getItem('theme') === 'dark')
 
-    const bgrandom = {
-        "01d": "bg-[url(/imgs/bgs/cieloDesp.jpg)]",
-        "01n": "bg-[url(/imgs/bgs/cieloDesp.jpg)]",
-        "02d": "bg-[url(/imgs/bgs/pocasN.jpg)]",
-        "02n": "bg-[url(/imgs/bgs/pocasN.jpg)]",
-        "03d": "bg-[url(/imgs/bgs/nubesdisp.jpg)]",
-        "03n": "bg-[url(/imgs/bgs/nubesdisp.jpg)]",
-        "04d": "bg-[url(/imgs/bgs/ventos.jpg)]",
-        "04n": "bg-[url(/imgs/bgs/ventos.jpg)]",
-        "09d": "bg-[url(/imgs/bgs/aguacero.jpg)]",
-        "09n": "bg-[url(/imgs/bgs/aguacero.jpg)]",
-        "10d": "bg-[url(/imgs/bgs/lluvia.jpg)]",
-        "10n": "bg-[url(/imgs/bgs/tormenta.jpg)]",
-        "11d": "bg-[url(/imgs/bgs/tormenta.jpg)]",
-        "11n": "bg-[url(/imgs/bgs/tormenta.jpg)]",
-        "13d": "bg-[url(/imgs/bgs/nieve.jpg)]",
-        "13n": "bg-[url(/imgs/bgs/nieve.jpg)]",
-        "50d": "bg-[url(/imgs/bgs/neblina.jpg)]",
-        "50n": "bg-[url(/imgs/bgs/neblina.jpg)]",
-    }
+    // const bgrandom = {
+    //     "01d": "bg-[url(/imgs/bgs/cieloDesp.jpg)]",
+    //     "01n": "bg-[url(/imgs/bgs/cieloDesp.jpg)]",
+    //     "02d": "bg-[url(/imgs/bgs/pocasN.jpg)]",
+    //     "02n": "bg-[url(/imgs/bgs/pocasN.jpg)]",
+    //     "03d": "bg-[url(/imgs/bgs/nubesdisp.jpg)]",
+    //     "03n": "bg-[url(/imgs/bgs/nubesdisp.jpg)]",
+    //     "04d": "bg-[url(/imgs/bgs/ventos.jpg)]",
+    //     "04n": "bg-[url(/imgs/bgs/ventos.jpg)]",
+    //     "09d": "bg-[url(/imgs/bgs/aguacero.jpg)]",
+    //     "09n": "bg-[url(/imgs/bgs/aguacero.jpg)]",
+    //     "10d": "bg-[url(/imgs/bgs/lluvia.jpg)]",
+    //     "10n": "bg-[url(/imgs/bgs/tormenta.jpg)]",
+    //     "11d": "bg-[url(/imgs/bgs/tormenta.jpg)]",
+    //     "11n": "bg-[url(/imgs/bgs/tormenta.jpg)]",
+    //     "13d": "bg-[url(/imgs/bgs/nieve.jpg)]",
+    //     "13n": "bg-[url(/imgs/bgs/nieve.jpg)]",
+    //     "50d": "bg-[url(/imgs/bgs/neblina.jpg)]",
+    //     "50n": "bg-[url(/imgs/bgs/neblina.jpg)]",
+    // }
 
     const [iscelsius, setIscelsius] = useState(true)
 
@@ -44,10 +46,15 @@ export const Wheater = ({ weather }) => {
     const [searchweather, setSearchweather] = useState(null)
     const TempSearch = iscelsius ? KelvintoCelsius(searchweather?.main.temp) : KelvintoFar(searchweather?.main.temp);
 
-    const resultbgs = bgrandom[searchweather?.weather[0].icon];
-    // const resultbg = bgrandom[weather?.weather[0].icon];
-    const variable = '10d'
+    // BackGround Images
+    const resultbgs = bgrandom[searchweather?.weather[0].icon];      
     const resultbg = bgrandom[weather?.weather[0].icon];
+
+    // BackGround Images DarkMode
+    const resultbgdark = bgdarkmode[weather?.weather[0].icon];
+    const resultbgDarks = bgdarkmode[searchweather?.weather[0].icon]
+
+    // const resultBacks = `/imgs/bgs/${isDarkMode ? resultbgDarks : resultbgs}`
 
     const handlesubmit = (event) => {
         event.preventDefault();
@@ -84,6 +91,7 @@ export const Wheater = ({ weather }) => {
                 {
                     searchweather ? (
                         <WeatherCurrent
+                        // resultBacks={resultBacks}
                         handlesubmit={handlesubmit}
                         validate={validate}
                         handleChangeTheme={handleChangeTheme}
@@ -93,10 +101,12 @@ export const Wheater = ({ weather }) => {
                         iscelsius={iscelsius}
                         handleChangeUtemp={handleChangeUtemp}
                         resultbgs={resultbgs}
+                        resultbgDarks={resultbgDarks}
                         />        
                     ) : (
                         <WeatherSearch 
                         resultbg={resultbg} 
+                        resultbgdark={resultbgdark}
                         handlesubmit={handlesubmit}
                         validate={validate}
                         handleChangeTheme={handleChangeTheme}

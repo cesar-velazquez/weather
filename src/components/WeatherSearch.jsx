@@ -1,9 +1,9 @@
 import React from 'react'
 
-const WeatherSearch = ({ resultbg, handlesubmit, validate, handleChangeTheme, isDarkMode, weather, resultTemp, iscelsius, handleChangeUtemp }) => {
+const WeatherSearch = ({resultbgdark, resultbg, handlesubmit, validate, handleChangeTheme, isDarkMode, weather, resultTemp, iscelsius, handleChangeUtemp }) => {
     return (
         <div className={`text-white min-h-screen h-[117vh]  flex justify-center 
-        items-start  bg-no-repeat bg-cover bg-center ${isDarkMode ? `${resultbg} ` : ` ${resultbg}`}`} alt="">
+        items-start  bg-no-repeat bg-cover bg-center ${isDarkMode ? `${resultbgdark} ` : ` ${resultbg}`}`} alt="">
 
             <section className='m-auto text-center grid gap-5             
             w-[min(100%,_510px)] dark:w-full 
