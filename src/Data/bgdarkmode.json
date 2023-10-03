@@ -1,0 +1,20 @@
+{
+    "01d": "bg-[url(/imgs/bgDark/despejadaN.jpg)]",
+    "01n": "bg-[url(/imgs/bgDark/despejadaN.jpg)]",
+    "02d": "bg-[url(/imgs/bgDark/pocasnubesN.jpg)]",
+    "02n": "bg-[url(/imgs/bgDark/pocasnubesN.jpg)]",
+    "03d": "bg-[url(/imgs/bgDark/dispN.jpg)]",
+    "03n": "bg-[url(/imgs/bgDark/dispN.jpg)]",
+    "04d": "bg-[url(/imgs/bgDark/vientN.jpg)]",
+    "04n": "bg-[url(/imgs/bgDark/vientN.jpg)]",
+    "09d": "bg-[url(/imgs/bgDark/aguaceroN.jpg)]",
+    "09n": "bg-[url(/imgs/bgDark/aguaceroN.jpg)]",
+    "10d": "bg-[url(/imgs/bgDark/lluviaMN.jpg)] ",
+    "10n": "bg-[url(/imgs/bgDark/lluviaMN.jpg)] ",
+    "11d": "bg-[url(/imgs/bgDark/tormentaN.png)] ",
+    "11n": "bg-[url(/imgs/bgDark/tormentaN.png)] ",
+    "13d": "bg-[url(/imgs/bgDark/nieveN.jpg)]",
+    "13n": "bg-[url(/imgs/bgDark/nieveN.jpg)]",
+    "50d": "bg-[url(/imgs/bgDark/neblinaN.jpg)]",
+    "50n": "bg-[url(/imgs/bgDark/neblinaN.jpg)]"
+}

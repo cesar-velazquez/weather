@@ -2,32 +2,54 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import WeatherSearch from './WeatherSearch';
 import WeatherCurrent from './WeatherCurrent';
-import bgrandom from './Data/bgrandom.json'
-import bgdarkmode from './Data/bgdarkmode.json'
+import bgrandom from '../Data/bgrandom.json'
+import bgdarkmode from '../Data/bgdarkmode.json'
 
-export const Wheater = ({ weather }) => {
+export const Wheater = ({ weather }) => {    
     const [isDarkMode, setIsDarkMode] = useState(localStorage.getItem('theme') === 'dark')
 
-    // const bgrandom = {
-    //     "01d": "bg-[url(/imgs/bgs/cieloDesp.jpg)]",
-    //     "01n": "bg-[url(/imgs/bgs/cieloDesp.jpg)]",
-    //     "02d": "bg-[url(/imgs/bgs/pocasN.jpg)]",
-    //     "02n": "bg-[url(/imgs/bgs/pocasN.jpg)]",
-    //     "03d": "bg-[url(/imgs/bgs/nubesdisp.jpg)]",
-    //     "03n": "bg-[url(/imgs/bgs/nubesdisp.jpg)]",
-    //     "04d": "bg-[url(/imgs/bgs/ventos.jpg)]",
-    //     "04n": "bg-[url(/imgs/bgs/ventos.jpg)]",
-    //     "09d": "bg-[url(/imgs/bgs/aguacero.jpg)]",
-    //     "09n": "bg-[url(/imgs/bgs/aguacero.jpg)]",
-    //     "10d": "bg-[url(/imgs/bgs/lluvia.jpg)]",
-    //     "10n": "bg-[url(/imgs/bgs/tormenta.jpg)]",
-    //     "11d": "bg-[url(/imgs/bgs/tormenta.jpg)]",
-    //     "11n": "bg-[url(/imgs/bgs/tormenta.jpg)]",
-    //     "13d": "bg-[url(/imgs/bgs/nieve.jpg)]",
-    //     "13n": "bg-[url(/imgs/bgs/nieve.jpg)]",
-    //     "50d": "bg-[url(/imgs/bgs/neblina.jpg)]",
-    //     "50n": "bg-[url(/imgs/bgs/neblina.jpg)]",
-    // }
+    const bgrandom = {
+        "01d": "bg-[url(/imgs/bgs/cieloDesp.jpg)]",
+        "01n": "bg-[url(/imgs/bgs/cieloDesp.jpg)]",
+        "02d": "bg-[url(/imgs/bgs/pocasN.jpg)]",
+        "02n": "bg-[url(/imgs/bgs/pocasN.jpg)]",
+        "03d": "bg-[url(/imgs/bgs/nubesdisp.jpg)]",
+        "03n": "bg-[url(/imgs/bgs/nubesdisp.jpg)]",
+        "04d": "bg-[url(/imgs/bgs/ventos.jpg)]",
+        "04n": "bg-[url(/imgs/bgs/ventos.jpg)]",
+        "09d": "bg-[url(/imgs/bgs/aguacero.jpg)]",
+        "09n": "bg-[url(/imgs/bgs/aguacero.jpg)]",
+        "10d": "bg-[url(/imgs/bgs/lluvia.jpg)]",
+        "10n": "bg-[url(/imgs/bgs/tormenta.jpg)]",
+        "11d": "bg-[url(/imgs/bgs/tormenta.jpg)]",
+        "11n": "bg-[url(/imgs/bgs/tormenta.jpg)]",
+        "13d": "bg-[url(/imgs/bgs/nieve.jpg)]",
+        "13n": "bg-[url(/imgs/bgs/nieve.jpg)]",
+        "50d": "bg-[url(/imgs/bgs/neblina.jpg)]",
+        "50n": "bg-[url(/imgs/bgs/neblina.jpg)]",
+    }
+
+const bgdarkmode = {
+    "01d": "bg-[url(/imgs/bgDark/despejadaN.jpg)]",
+    "01n": "bg-[url(/imgs/bgDark/despejadaN.jpg)]",
+    "02d": "bg-[url(/imgs/bgDark/pocasnubesN.jpg)]",
+    "02n": "bg-[url(/imgs/bgDark/pocasnubesN.jpg)]",
+    "03d": "bg-[url(/imgs/bgDark/dispN.jpg)]",
+    "03n": "bg-[url(/imgs/bgDark/dispN.jpg)]",
+    "04d": "bg-[url(/imgs/bgDark/vientN.jpg)]",
+    "04n": "bg-[url(/imgs/bgDark/vientN.jpg)]",
+    "09d": "bg-[url(/imgs/bgDark/aguaceroN.jpg)]",
+    "09n": "bg-[url(/imgs/bgDark/aguaceroN.jpg)]",
+    "10d": "bg-[url(/imgs/bgDark/lluviaMN.jpg)] ",
+    "10n": "bg-[url(/imgs/bgDark/lluviaMN.jpg)] ",
+    "11d": "bg-[url(/imgs/bgDark/tormentaN.png)] ",
+    "11n": "bg-[url(/imgs/bgDark/tormentaN.png)] ",
+    "13d": "bg-[url(/imgs/bgDark/nieveN.jpg)]",
+    "13n": "bg-[url(/imgs/bgDark/nieveN.jpg)]",
+    "50d": "bg-[url(/imgs/bgDark/neblinaN.jpg)]",
+    "50n": "bg-[url(/imgs/bgDark/neblinaN.jpg)]"
+}
+
 
     const [iscelsius, setIscelsius] = useState(true)
 
