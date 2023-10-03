@@ -5,8 +5,9 @@ const WeatherCurrent = ({ handlesubmit, validate,
     TempSearch, iscelsius, handleChangeUtemp, resultbgDarks, 
     resultbgs }) => {
     return (
+        // ${isDarkMode== true ? `${resultbgDarks} ` : `} 
         <div className={`text-white min-h-screen h-[117vh]  flex justify-center 
-        items-start  bg-no-repeat bg-cover bg-center ${isDarkMode== true ? `${resultbgDarks} ` : ` ${resultbgs}`}`} >
+        items-start  bg-no-repeat bg-cover bg-center ${resultbgs} `} >
 
             <section className='m-auto text-center grid gap-5             
             w-[min(100%,_510px)] dark:w-full 
