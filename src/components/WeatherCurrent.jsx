@@ -7,7 +7,7 @@ const WeatherCurrent = ({ handlesubmit, validate,
     return (
         // ${isDarkMode== true ? `${resultbgDarks} ` : `} 
         <div className={`text-white min-h-screen h-[117vh]  flex justify-center 
-        items-start  bg-no-repeat bg-cover bg-center 
+        items-start  bg-no-repeat bg-cover bg-center
         ${isDarkMode ? `${resultbgDarks}` : `${resultbgs}` } `} >
 
             <section className='m-auto text-center grid gap-5             

@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react';
 import { Wheater } from './components/Wheater'
 import axios from 'axios';
+import Loader from './components/Loader/Loader';
 
 function App() {
   const [weather, setWeather] = useState(null)
+  const [isDarkMode, setIsDarkMode] = useState(localStorage.getItem('theme') === 'dark')
+  const [isloading, setIsloading] = useState(true)
 
   const success = (pos) => {
     const lat = pos.coords.latitude;
@@ -15,14 +18,34 @@ function App() {
       .catch((err) => console.log(err))
   }
 
+  const handleChangeTheme = () => {
+    setIsDarkMode(!isDarkMode)
+}
+
+
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(success);
-  }, [])
+    setTimeout(() => {
+      setIsloading(false);
+    }, 1000);
+
+    isDarkMode
+    ?
+    (document.documentElement.classList.add('dark'), localStorage.setItem('theme', 'dark'))
+    : (document.documentElement.classList.remove('dark'), localStorage.setItem('theme', 'light'))
+
+  }, [isDarkMode])
 
   return (
     <div className=''>
-      { 
-      weather && <Wheater  weather={weather} />  
+      {
+        isloading ? (
+          <Loader/>
+        ): (
+          // { 
+            weather && <Wheater isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} weather={weather} />  
+            // }
+        )
       }
     </div>
   )

@@ -5,8 +5,7 @@ import WeatherCurrent from './WeatherCurrent';
 import bgrandom from '../Data/bgrandom.json'
 import bgdarkmode from '../Data/bgdarkmode.json'
 
-export const Wheater = ({ weather }) => {    
-    const [isDarkMode, setIsDarkMode] = useState(localStorage.getItem('theme') === 'dark')
+export const Wheater = ({ weather, isDarkMode, setIsDarkMode }) => {    
 
     const bgrandom = {
         "01d": "bg-[url(/imgs/bgs/cieloDesp.jpg)]",
@@ -71,12 +70,9 @@ const bgdarkmode = {
     // BackGround Images
     const resultbgs = bgrandom[searchweather?.weather[0].icon];      
     const resultbg = bgrandom[weather?.weather[0].icon];
-
-    // BackGround Images DarkMode
+    
     const resultbgdark = bgdarkmode[weather?.weather[0].icon];
-    const resultbgDarks = bgdarkmode[searchweather?.weather[0].icon]
-
-    // const resultBacks = `/imgs/bgs/${isDarkMode ? resultbgDarks : resultbgs}`
+    const resultbgDarks = bgdarkmode[searchweather?.weather[0].icon]    
 
     const handlesubmit = (event) => {
         event.preventDefault();
@@ -101,13 +97,9 @@ const bgdarkmode = {
     }
 
     useEffect(() => {
-        isDarkMode
-            ?
-            (document.documentElement.classList.add('dark'), localStorage.setItem('theme', 'dark'))
-            : (document.documentElement.classList.remove('dark'), localStorage.setItem('theme', 'light'))
-    }, [isDarkMode])
-    return (
-        // dark:bg-black/90
+        
+    }, [])
+    return (        
         <div className=''>
 
                 {
